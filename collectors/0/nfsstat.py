@@ -12,14 +12,14 @@
 # of the GNU Lesser General Public License along with this program.  If not,
 # see <http://www.gnu.org/licenses/>.
 #
-"""import nfs stats from /proc into TSDB"""
+"""Imports NFS stats from /proc."""
 
 import sys
 import time
 
 COLLECTION_INTERVAL = 15  # seconds
 
-nfs_client_proc4_names = [
+nfs_client_proc4_names = (
     # list of ops taken from nfs-utils / nfsstat.c
     "null", "read", "write", "commit", "open", "open_conf", "open_noat",
     "open_dgrd", "close", "setattr", "fsinfo", "renew", "setclntid", "confirm",
@@ -31,7 +31,7 @@ nfs_client_proc4_names = [
     "exchange_id", "create_ses", "destroy_ses", "sequence", "get_lease_t",
     "reclaim_comp", "layoutget", "getdevinfo", "layoutcommit", "layoutreturn",
     "getdevlist",
-]
+)
 
 
 def main():
