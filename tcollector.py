@@ -1121,7 +1121,7 @@ def populate_collectors(coldir):
                 continue
 
             filename = '%s/%d/%s' % (coldir, interval, colname)
-            if os.path.isfile(filename):
+            if os.path.isfile(filename) and os.access(filename, os.X_OK):
                 mtime = os.path.getmtime(filename)
 
                 if not is_collector_enabled(colname):
